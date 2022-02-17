@@ -1,1 +1,1 @@
-web: gunicorn app:server
+web: gunicorn indiv_a1_app:server
