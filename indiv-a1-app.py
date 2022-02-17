@@ -3,7 +3,6 @@ from dash import Dash, html, dcc, Input, Output
 import pandas as pd
 
 alt.data_transformers.enable("data_server")
-alt.renderers.enable("mimetype")
 
 df = pd.read_csv("athlete_events.csv")
 filtered_df = df[df["Team"] == "Canada"]

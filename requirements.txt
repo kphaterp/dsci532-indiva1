@@ -1,6 +1,7 @@
 pandas
 gunicorn
 altair
+altair_data_server
 dash
 dash_bootstrap_components
 plotly
