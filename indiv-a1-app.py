@@ -3,10 +3,10 @@ from dash import Dash, html, dcc, Input, Output
 import pandas as pd
 
 
-
 df = pd.read_csv("athlete_events.csv")
 filtered_df = df[df["Team"] == "Canada"]
 filtered_df["Medal"].fillna(0)
+filtered_df = filtered_df.iloc[0:5000, :]
 
 
 def plot(xmax, ycol, filtered_df=filtered_df.copy()):
