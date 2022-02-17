@@ -36,7 +36,7 @@ app.layout = html.Div(
             ],
         ),
         dcc.Slider(id="xslider", min=1900, max=2016, marks={
-               str(year): str(year) for year in range(1900, 2017)}, value=2000),
+               str(year): str(year) for year in range(1900, 2017, 5)}, value=2000),
     ]
 )
 
