@@ -11,7 +11,7 @@ filtered_df = filtered_df.iloc[0:5000, :]
 
 def plot(xmax, ycol, filtered_df=filtered_df.copy()):
     chart = (
-        alt.Chart(filtered_df[filtered_df["Year"] < xmax])
+        alt.Chart(filtered_df[filtered_df["Year"] < xmax], title="Canadian olympic athlete characteristics over the years")
         .mark_point()
         .encode(y=alt.Y(ycol), x=alt.X("Year:O"))
     )
@@ -35,7 +35,8 @@ app.layout = html.Div(
                 for i in ["mean(Weight)", "mean(Age)", "mean(Height)"]
             ],
         ),
-        dcc.Slider(id="xslider", min=1900, max=2016),
+        dcc.Slider(id="xslider", min=1900, max=2016, marks={
+               str(year): str(year) for year in range(1900, 2017)}, value=2000),
     ]
 )
 
